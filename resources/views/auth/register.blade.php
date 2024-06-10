@@ -39,6 +39,30 @@
                         <strong>{{ $message }}</strong>
                     </span>
                 @enderror
+                 <label class="block clearfix">
+                        <span class="block input-icon input-icon-right">
+                            <input type="text" class="form-control"
+                                placeholder="phone " name="phone"/>
+                            <i class="ace-icon fa fa-phone"></i>
+                        </span>
+                    </label>
+                    @error('phone')
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                @enderror
+                 <label class="block clearfix">
+                        <span class="block input-icon input-icon-right">
+                            <input type="text" class="form-control"
+                                placeholder="gender" name="gender"/>
+                            <i class="ace-icon fa fa-users"></i>
+                        </span>
+                    </label>
+                    @error('gender')
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                @enderror
                     <label class="block clearfix">
                         <span class="block input-icon input-icon-right">
                             <input type="password" class="form-control"
