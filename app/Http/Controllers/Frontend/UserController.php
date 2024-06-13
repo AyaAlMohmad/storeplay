@@ -98,6 +98,7 @@ return back();
         $socials=Social::all();
         return view('frontend.deletAccount',compact('socials','headerCategory'));
     }
+
     
     public function deleteAccount(Request $request)
     {
