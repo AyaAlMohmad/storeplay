@@ -1,24 +1,35 @@
 @extends('layouts.frontend.app')
 @section('content')
-<button style="text-align: center; background-color:rgb(45, 150, 96)">
-<a  href="{{ route('logout') }}"
-onclick="event.preventDefault();
-              document.getElementById('logout-form').submit();" style="color: aliceblue">
-      
-    <i class="ace-icon bx bx-power-off"></i>
-    Logout
-</a>
-<form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-    @csrf
-</form>
-</button>
-<style>
-    .circle-icon {
-         font-family: 'BoxIcons';
-         font-weight: normal;
-         --size: 20px; /* قم بتغيير هذا القيمة حسب الحاجة */
-     }
- </style>
+    <button style="text-align: center; background-color:rgb(45, 150, 96)">
+        <a href="{{ route('user.viwedeletAccount') }}" style="color: aliceblue">
+
+            <i class="ace-icon bx bx-power-off"></i>
+            Delete Account
+        </a>
+
+    </button>
+    <button style="text-align: center; background-color:rgb(45, 150, 96)">
+        <a href="{{ route('logout') }}"
+            onclick="event.preventDefault();
+              document.getElementById('logout-form').submit();"
+            style="color: aliceblue">
+
+            <i class="ace-icon bx bx-power-off"></i>
+            Logout
+        </a>
+        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+            @csrf
+        </form>
+    </button>
+
+    <style>
+        .circle-icon {
+            font-family: 'BoxIcons';
+            font-weight: normal;
+            --size: 20px;
+            /* قم بتغيير هذا القيمة حسب الحاجة */
+        }
+    </style>
     <div class="small-container single-product">
         <div class="row">
             <div class="col-2">
@@ -31,9 +42,9 @@ onclick="event.preventDefault();
                         Modify information
                     </a>
 
-                
 
-                   
+
+
                 </div>
 
 
@@ -45,7 +56,7 @@ onclick="event.preventDefault();
                     <span class="middle">{{ $user->name }}</span>
 
                     <span style="color: green" class="circle-icon" aria-hidden="true">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" >
+                        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25">
                             <circle cx="10" cy="10" r="8" fill="#008000" />
                         </svg>
                         online
@@ -61,7 +72,7 @@ onclick="event.preventDefault();
                         </div>
                     </div>
 
-                
+
 
                     <div class="profile-info-row">
                         <h2> gender </h2>
@@ -88,7 +99,7 @@ onclick="event.preventDefault();
                     </div>
                 </div>
 
-                
+
             </div><!-- /.col -->
         </div><!-- /.row -->
 

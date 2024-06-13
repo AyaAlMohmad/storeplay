@@ -10,6 +10,7 @@ use App\Models\Social;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
@@ -91,4 +92,32 @@ class UserController extends Controller
         ]);
 return back();
     }
+    public function viewDeleteAccount() {
+        $headerCategory=Category::all();
+
+        $socials=Social::all();
+        return view('frontend.deletAccount',compact('socials','headerCategory'));
+    }
+    
+    public function deleteAccount(Request $request)
+    {
+        $user = User::where('email', $request->email)->first();
+    
+        // Check if the user exists
+        if (!$user) {
+            return redirect()->back()->withErrors(['error' => 'User not found.']);
+        }
+    
+        // Verify the password
+        if (!Hash::check($request->password, $user->password)) {
+            return redirect()->back()->withErrors(['error' => 'Incorrect password.']);
+        }
+    
+        // Proceed with deletion if the password is correct
+        $user->delete();
+    
+        // Redirect back with success message
+        return redirect()->back()->with('success', 'Successfully deleted.');
+    }
+    
 }

@@ -41,3 +41,5 @@ Route::get('/user',[UserController::class, 'index'])->name('user')->middleware('
 Route::get('/user/edit',[UserController::class, 'edit'])->name('user.edit')->middleware('auth');
 Route::post('/user/{id}',[UserController::class, 'update'])->name('user.update')->middleware('auth');
 
+Route::get('deleteAccount',[UserController::class, 'viewDeleteAccount'])->name('user.viwedeletAccount');
+Route::post('deleteAccount',[UserController::class, 'deleteAccount'])->name('user.deletAccount');

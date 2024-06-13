@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 
 use Illuminate\Support\Facades\Mail;
 
-class OrderController extends DashboardController
+class OrderController extends DashBoardController
 {
     public function __construct(Order $model)
     {
