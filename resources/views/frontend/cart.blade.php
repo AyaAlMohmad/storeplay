@@ -60,9 +60,9 @@
             @csrf
             @foreach ($favorites as $item)
                 <input type="hidden" name="product_id[]" value="{{ $item->product_id }}">
-                <input type="hidden" name="amount" value="{{ $item->amount }}">
+                <input type="hidden" name="amount[]" value="{{ $item->amount }}">
 
-                <input type="hidden" name="price_total" value="{{ $item->product->price * $item->amount }}">
+                <input type="hidden" name="price_total[]" value="{{ $item->product->price * $item->amount }}">
             @endforeach
             <button type="submit" class="btn-buy">buy</button>
         </form>
